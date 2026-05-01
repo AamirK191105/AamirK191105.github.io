@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Syed Nihaal - projects, skills, and contact information.">
+    <title>Syed Nihaal Ahmed | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="top" class="page-top-sentinel" aria-hidden="true"></div>
+    <div class="ambient-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Go to top">
+            <span class="brand-mark"><img src="assets/img/icons8-administrator-male-48.png" alt="" class="brand-icon"></span>
+            <span class="brand-text">Syed Nihaal Ahmed</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#starred"><img src="assets/img/icons8-star-50.png" alt="" class="nav-icon">Starred</a>
+            <a href="#projects"><img src="assets/img/icons8-group-of-projects-50.png" alt="" class="nav-icon">Projects</a>
+            <a href="#repositories"><img src="assets/img/icons8-repository-50.png" alt="" class="nav-icon">Repos</a>
+            <a href="#interested"><img src="assets/img/icons8-idea-50.png" alt="" class="nav-icon">Interested</a>
+            <a href="#skills"><img src="assets/img/icons8-skills-50.png" alt="" class="nav-icon">Skills</a>
+            <a href="#journey"><img src="assets/img/icons8-journey-50.png" alt="" class="nav-icon">Journey</a>
+            <a href="#contact"><img src="assets/img/icons8-contact-50.png" alt="" class="nav-icon">Contact</a>
+        </nav>
+        <a class="button button-small button-nav-style" href="https://github.com/AamirK191105" target="_blank" rel="noopener noreferrer"><img src="assets/img/icons8-github-50.png" alt="" class="nav-icon">GitHub</a>
+    </header>
+
+    <main>
+        <section class="hero section reveal" aria-labelledby="hero-title">
+            <p class="eyebrow">Portfolio</p>
+            <h1 id="hero-title">Building predictive models, analytical pipelines, and data-driven solutions that turn raw numbers into meaning.</h1>
+            <p class="hero-copy">
+                Hi, I am Syed, an Information Technology student at Middlesex University Dubai. I am working towards a career in research-based Data Science — applying machine learning and statistical modelling to solve real-world problems at the highest level.</p>
+            <div class="hero-actions">
+                <a class="button" href="#projects">View Projects</a>
+                <a class="button button-secondary" href="#contact">Get In Touch</a>
+            </div>
+            <ul class="stats" aria-label="Highlights">
+                <li>
+                    <span class="stat-value" id="statRepos">--</span>
+                    <span class="stat-label">Public Repositories</span>
+                </li>
+                <li>
+                    <span class="stat-value" id="statContrib">--</span>
+                    <span class="stat-label">Contributions (This Year)</span>
+                </li>
+                <li>
+                    <span class="stat-value" id="statSocial">--</span>
+                    <span class="stat-label">Followers / Following</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section reveal" id="starred" aria-labelledby="starred-title">
+            <div class="section-head repo-head">
+                <div>
+                    <p class="eyebrow">Starred Repos</p>
+                    <h2 id="starred-title"><img src="assets/img/icons8-star-50.png" alt="" class="section-icon">Featured repos</h2>
+                </div>
+                <div class="repo-controls" aria-label="Starred repositories carousel controls">
+                    <button class="repo-nav" id="starredBack" type="button" aria-controls="starredGrid">Back</button>
+                    <button class="repo-nav" id="starredNext" type="button" aria-controls="starredGrid">Next</button>
+                </div>
+            </div>
+            <div class="repo-slider" aria-label="Starred repositories slider">
+                <div class="repo-track" id="starredGrid" tabindex="0">
+                    <article class="project-card">
+                        <h3>Loading starred repositories...</h3>
+                        <p>Fetching starred repository details from GitHub.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" id="projects" aria-labelledby="projects-title">
+            <div class="section-head repo-head">
+                <div>
+                    <p class="eyebrow">Most Contributed Repos</p>
+                    <h2 id="projects-title"><img src="assets/img/icons8-group-of-projects-50.png" alt="" class="section-icon">Where I have contributed the most</h2>
+                </div>
+                <div class="repo-controls" aria-label="Most contributed repositories carousel controls">
+                    <button class="repo-nav" id="featuredBack" type="button" aria-controls="featuredGrid">Back</button>
+                    <button class="repo-nav" id="featuredNext" type="button" aria-controls="featuredGrid">Next</button>
+                </div>
+            </div>
+            <div class="repo-slider" aria-label="Most contributed repositories slider">
+                <div class="repo-track" id="featuredGrid" tabindex="0">
+                    <article class="project-card">
+                        <h3>Loading repositories...</h3>
+                        <p>Fetching contribution data from GitHub API.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" id="repositories" aria-labelledby="repositories-title">
+            <div class="section-head repo-head">
+                <div>
+                    <p class="eyebrow">Repository Showcase</p>
+                    <h2 id="repositories-title"><img src="assets/img/icons8-repository-50.png" alt="" class="section-icon">All GitHub repositories</h2>
+                </div>
+                <div class="repo-controls" aria-label="Repository carousel controls">
+                    <button class="repo-nav" id="repoBack" type="button" aria-controls="repoTrack">Back</button>
+                    <button class="repo-nav" id="repoNext" type="button" aria-controls="repoTrack">Next</button>
+                </div>
+            </div>
+            <div class="repo-slider" aria-label="Manual list of all repositories">
+                <div class="repo-track" id="repoTrack" tabindex="0">
+                    <article class="repo-item">
+                        <h3>Loading repositories...</h3>
+                        <p class="repo-about">Fetching about and topics from GitHub API.</p>
+                        <p class="repo-topics">Topics: ...</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" id="interested" aria-labelledby="interested-title">
+            <div class="section-head repo-head">
+                <div>
+                    <p class="eyebrow">Interested Repos</p>
+                    <h2 id="interested-title"><img src="assets/img/icons8-idea-50.png" alt="" class="section-icon">Repositories I am exploring</h2>
+                </div>
+                <div class="repo-controls" aria-label="Interested repositories carousel controls">
+                    <button class="repo-nav" id="interestedBack" type="button" aria-controls="interestedGrid">Back</button>
+                    <button class="repo-nav" id="interestedNext" type="button" aria-controls="interestedGrid">Next</button>
+                </div>
+            </div>
+            <div class="repo-slider" aria-label="Interested repositories slider">
+                <div class="repo-track" id="interestedGrid" tabindex="0">
+                    <article class="project-card">
+                        <h3>Loading interested repositories...</h3>
+                        <p>Fetching repository details from GitHub stars list.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" id="skills" aria-labelledby="skills-title">
+            <div class="section-head">
+                <p class="eyebrow">Toolbox</p>
+                <h2 id="skills-title"><img src="assets/img/icons8-skills-50.png" alt="" class="section-icon">Skills</h2>
+            </div>
+            <div class="skills-layout topic-layout" id="topicsContainer">
+                <span class="topic-chip">Loading topics...</span>
+            </div>
+        </section>
+
+        <section class="section reveal" id="journey" aria-labelledby="journey-title">
+            <div class="section-head">
+                <p class="eyebrow">Timeline</p>
+                <h2 id="journey-title"><img src="assets/img/icons8-journey-50.png" alt="" class="section-icon">Learning journey</h2>
+            </div>
+            <ol class="timeline">
+                <li>
+                    <span class="time">2022</span>
+                    <p>Web Foundations: HTML and CSS</p>
+                </li>
+                <li>
+                    <span class="time">2023</span>
+                    <p>Programming Fundamentals with Python</p>
+                </li>
+                <li>
+                    <span class="time">2024</span>
+                    <p>Structured Data: MySQL and XML</p>
+                </li>
+                <li>
+                    <span class="time">2025</span>
+                    <p>Applied Development: Data Analytics, MongoDB, and JavaScript</p>
+                </li>
+                <li>
+                    <span class="time">2026</span>
+                    <p>Advanced Focus: Data Science and Machine Learning</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section reveal" id="contact" aria-labelledby="contact-title">
+            <div class="section-head">
+                <p class="eyebrow">Contact</p>
+                <h2 id="contact-title"><img src="assets/img/icons8-contact-50.png" alt="" class="section-icon">Let us build something meaningful with data</h2>
+            </div>
+            <div class="contact-card">
+                <p>
+                    Open to collaboration, internships, and project discussions in data science, machine learning, and analytical tooling.
+                    Based in United Arab Emirates.
+                </p>
+                <div class="contact-actions">
+                    <a class="button" href="https://github.com/AamirK191105" target="_blank" rel="noopener noreferrer">Message on GitHub</a>
+                    <a class="button button-secondary" href="https://www.linkedin.com/in/syed-nihaal-ahmed-71056b31a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="button button-secondary" href="mailto:syednihaal5@gmail.com">Email</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Syed Nihaal. Built for GitHub Pages.</p>
+        <a href="#top" class="back-to-top-link"><img src="assets/img/icons8-up-squared-50.png" alt="" class="nav-icon">Back to top</a>
+    </footer>
+
+    <script>
+        (async function () {
+            const username = "AamirK191105";
+            const track = document.getElementById("repoTrack");
+            const backButton = document.getElementById("repoBack");
+            const nextButton = document.getElementById("repoNext");
+
+            const starredBackButton = document.getElementById("starredBack");
+            const starredNextButton = document.getElementById("starredNext");
+            const featuredBackButton = document.getElementById("featuredBack");
+            const featuredNextButton = document.getElementById("featuredNext");
+            const interestedBackButton = document.getElementById("interestedBack");
+            const interestedNextButton = document.getElementById("interestedNext");
+
+            const featuredGrid = document.getElementById("featuredGrid");
+            const starredGrid = document.getElementById("starredGrid");
+            const interestedGrid = document.getElementById("interestedGrid");
+            const topicsContainer = document.getElementById("topicsContainer");
+            const statRepos = document.getElementById("statRepos");
+            const statContrib = document.getElementById("statContrib");
+            const statSocial = document.getElementById("statSocial");
+
+            if (!track || !backButton || !nextButton || !starredBackButton || !starredNextButton || !featuredBackButton || !featuredNextButton || !interestedBackButton || !interestedNextButton || !featuredGrid || !starredGrid || !interestedGrid || !topicsContainer) {
+                return;
+            }
+
+            const GH_HEADERS = {
+                "Accept": "application/vnd.github+json"
+            };
+
+            const CACHE_KEY = "sn-portfolio-gh-cache-v1";
+            const CACHE_TTL_MS = 30 * 60 * 1000;
+            const EXCLUDED_REPOS = new Set(["AamirK191105.github.io", "AamirK191105"]);
+            const STARS_FEATURED_LIST_URL = "https://github.com/stars/AamirK191105/lists/featured-repos";
+            const STARS_INTERESTED_LIST_URL = "https://github.com/stars/AamirK191105/lists/interested-repos";
+            // Fallback list used when the GitHub API cannot return starred repos.
+            const starred_REPOS = [
+                "F1-2026-Qualifying-Prediction-and-Race-Strategy",
+                "F1-2020-British-GP-Mercedes-Qualifying-Lap-Time-Prediction",
+                "Car-Price-Prediction-and-Performance-Analysis"
+            ];
+            const INTERESTED_REPOS = [
+                "theOehrly/Fast-F1",
+                "toUpperCase78/formula1-datasets",
+                "NAME0x0/AVA"
+            ];
+
+            const isVisibleRepo = (repo) => repo && repo.name && !EXCLUDED_REPOS.has(repo.name);
+
+            const fetchWithRetry = async (url, options = {}, maxRetries = 3) => {
+                let lastError;
+                for (let attempt = 0; attempt < maxRetries; attempt++) {
+                    try {
+                        const response = await fetch(url, options);
+                        if (response.ok) {
+                            return response;
+                        }
+                        if (response.status === 404) {
+                            throw new Error(`Not found: ${url}`);
+                        }
+                        if (response.status === 403) {
+                            throw new Error("GitHub API rate limited");
+                        }
+                        lastError = new Error(`HTTP ${response.status}`);
+                    } catch (error) {
+                        lastError = error;
+                        if (attempt < maxRetries - 1) {
+                            const delay = Math.pow(2, attempt) * 1000;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                        }
+                    }
+                }
+                throw lastError;
+            };
+
+            const scrollToTop = (event) => {
+                if (event) {
+                    event.preventDefault();
+                }
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            };
+
+            document.querySelectorAll('a[href="#top"]').forEach((link) => {
+                link.addEventListener("click", scrollToTop);
+            });
+
+            const readCache = () => {
+                try {
+                    const raw = localStorage.getItem(CACHE_KEY);
+                    if (!raw) {
+                        return null;
+                    }
+
+                    const parsed = JSON.parse(raw);
+                    if (!parsed.timestamp || !parsed.data) {
+                        return null;
+                    }
+
+                    if (Date.now() - parsed.timestamp > CACHE_TTL_MS) {
+                        return null;
+                    }
+
+                    return parsed.data;
+                } catch {
+                    return null;
+                }
+            };
+
+            const writeCache = (data) => {
+                try {
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({
+                        timestamp: Date.now(),
+                        data
+                    }));
+                } catch {
+                    // Ignore storage failures and continue with in-memory data.
+                }
+            };
+
+            const extractstarredRepoNamesFromStarsList = (content) => {
+                if (!content || typeof content !== "string") {
+                    return [];
+                }
+
+                const headingRepoRegex = /##\s+\[[^\]]+\]\(https?:\/\/github\.com\/([^\/\s)]+)\/([^\/\s)]+)\)/g;
+                const names = [];
+                let match;
+
+                while ((match = headingRepoRegex.exec(content)) !== null) {
+                    const repoName = (match[2] || "").trim();
+                    if (repoName) {
+                        names.push(repoName);
+                    }
+                }
+
+                return Array.from(new Set(names));
+            };
+
+            const extractRepoFullNamesFromStarsList = (content) => {
+                if (!content || typeof content !== "string") {
+                    return [];
+                }
+
+                const headingRepoRegex = /##\s+\[[^\]]+\]\(https?:\/\/github\.com\/([^\/\s)]+)\/([^\/\s)]+)\)/g;
+                const fullNames = [];
+                let match;
+
+                while ((match = headingRepoRegex.exec(content)) !== null) {
+                    const owner = (match[1] || "").trim();
+                    const repoName = (match[2] || "").trim();
+                    if (owner && repoName) {
+                        fullNames.push(`${owner}/${repoName}`);
+                    }
+                }
+
+                return Array.from(new Set(fullNames));
+            };
+
+            const fetchstarredRepoNames = async () => {
+                const mirrored = `https://r.jina.ai/http://${STARS_FEATURED_LIST_URL.replace(/^https?:\/\//, "")}`;
+                const response = await fetchWithRetry(mirrored, {}, 2);
+                const text = await response.text();
+                return extractstarredRepoNamesFromStarsList(text);
+            };
+
+            const fetchInterestedRepoFullNames = async () => {
+                const mirrored = `https://r.jina.ai/http://${STARS_INTERESTED_LIST_URL.replace(/^https?:\/\//, "")}`;
+                const response = await fetchWithRetry(mirrored, {}, 2);
+                const text = await response.text();
+                return extractRepoFullNamesFromStarsList(text);
+            };
+
+            const fetchRepoByFullName = async (fullName) => {
+                const response = await fetchWithRetry(`https://api.github.com/repos/${fullName}`, { headers: GH_HEADERS }, 2);
+                return response.json();
+            };
+
+            const renderRepoCard = (repo) => {
+                const article = document.createElement("article");
+                article.className = "repo-item";
+
+                const h3 = document.createElement("h3");
+                const link = document.createElement("a");
+                link.href = repo.html_url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = repo.name;
+                h3.appendChild(link);
+
+                const about = document.createElement("p");
+                about.className = "repo-about";
+                about.textContent = repo.description || "No public description added yet.";
+
+                const topics = document.createElement("ul");
+                topics.className = "chip-list repo-topic-chips";
+                (repo.topics && repo.topics.length ? repo.topics : ["No Topics"]).forEach((topic) => {
+                    const chip = document.createElement("li");
+                    chip.textContent = topic;
+                    topics.appendChild(chip);
+                });
+
+                article.appendChild(h3);
+                article.appendChild(about);
+                article.appendChild(topics);
+                return article;
+            };
+
+            const renderFeaturedCard = (repo, options = {}) => {
+                const { showOwner = false } = options;
+                const article = document.createElement("article");
+                article.className = "project-card";
+
+                const title = document.createElement("h3");
+                const titleLink = document.createElement("a");
+                titleLink.href = repo.html_url;
+                titleLink.target = "_blank";
+                titleLink.rel = "noopener noreferrer";
+                titleLink.textContent = repo.name;
+                title.appendChild(titleLink);
+
+                const description = document.createElement("p");
+                description.textContent = repo.description || "No public description added yet.";
+
+                const ownerLogin =
+                    (repo.owner && repo.owner.login) ||
+                    (typeof repo.full_name === "string" && repo.full_name.includes("/") ? repo.full_name.split("/")[0] : "Unknown");
+
+                const owner = document.createElement("p");
+                owner.className = "repo-owner";
+                owner.textContent = `Owner: @${ownerLogin}`;
+
+                const chips = document.createElement("ul");
+                chips.className = "chip-list";
+
+                const languageChip = document.createElement("li");
+                languageChip.textContent = repo.language || "Unknown Language";
+
+                const activityChip = document.createElement("li");
+                activityChip.textContent = `${repo.activityCount || 0} Recent Commits`;
+
+                const topicChip = document.createElement("li");
+                topicChip.textContent = repo.topics && repo.topics.length ? repo.topics[0] : "No Topics";
+
+                chips.appendChild(languageChip);
+                chips.appendChild(activityChip);
+                chips.appendChild(topicChip);
+
+                article.appendChild(title);
+                if (showOwner) {
+                    article.appendChild(owner);
+                }
+                article.appendChild(description);
+                article.appendChild(chips);
+                return article;
+            };
+
+            const aggregateRecentActivity = (events) => {
+                const counts = Object.create(null);
+                events
+                    .filter((event) => event && event.type === "PushEvent" && event.repo && event.repo.name)
+                    .forEach((event) => {
+                        const fullName = event.repo.name;
+                        const repoName = fullName.split("/")[1] || fullName;
+                        const commitCount = Number(event.payload && event.payload.size) || 1;
+                        counts[repoName] = (counts[repoName] || 0) + commitCount;
+                    });
+
+                return counts;
+            };
+
+            const aggregateThisYearContributions = (events) => {
+                const year = new Date().getFullYear();
+                const contributionTypes = new Set([
+                    "PullRequestEvent",
+                    "IssuesEvent",
+                    "IssueCommentEvent",
+                    "PullRequestReviewCommentEvent",
+                    "CommitCommentEvent",
+                    "CreateEvent"
+                ]);
+
+                return events
+                    .filter((event) => event && event.created_at)
+                    .filter((event) => new Date(event.created_at).getFullYear() === year)
+                    .reduce((total, event) => {
+                        if (event.type === "PushEvent") {
+                            return total + (Number(event.payload && event.payload.size) || 1);
+                        }
+
+                        return total + (contributionTypes.has(event.type) ? 1 : 0);
+                    }, 0);
+            };
+
+            const setupTrackNavigation = (trackElement, backControl, nextControl, cardSelector) => {
+                const updateButtons = () => {
+                    const maxLeft = trackElement.scrollWidth - trackElement.clientWidth;
+                    backControl.disabled = trackElement.scrollLeft <= 2;
+                    nextControl.disabled = trackElement.scrollLeft >= maxLeft - 2;
+                };
+
+                const step = () => {
+                    const firstCard = trackElement.querySelector(cardSelector);
+                    if (!firstCard) {
+                        return trackElement.clientWidth;
+                    }
+
+                    const styles = window.getComputedStyle(trackElement);
+                    const gap = parseFloat(styles.columnGap || styles.gap || "0");
+                    return (firstCard.getBoundingClientRect().width + gap) * 3;
+                };
+
+                backControl.addEventListener("click", () => {
+                    trackElement.scrollBy({ left: -step(), behavior: "smooth" });
+                });
+
+                nextControl.addEventListener("click", () => {
+                    trackElement.scrollBy({ left: step(), behavior: "smooth" });
+                });
+
+                trackElement.addEventListener("scroll", updateButtons, { passive: true });
+                window.addEventListener("resize", updateButtons);
+
+                return { updateButtons };
+            };
+
+            const repoNavigation = setupTrackNavigation(track, backButton, nextButton, ".repo-item");
+            const starredNavigation = setupTrackNavigation(starredGrid, starredBackButton, starredNextButton, ".project-card");
+            const featuredNavigation = setupTrackNavigation(featuredGrid, featuredBackButton, featuredNextButton, ".project-card");
+            const interestedNavigation = setupTrackNavigation(interestedGrid, interestedBackButton, interestedNextButton, ".project-card");
+
+            try {
+                const cached = readCache();
+                let user;
+                let repos;
+                let events;
+                let starredNames = [];
+                let interestedFullNames = [];
+
+                try {
+                    starredNames = await fetchstarredRepoNames();
+                } catch {
+                    starredNames = [];
+                }
+
+                try {
+                    interestedFullNames = await fetchInterestedRepoFullNames();
+                } catch {
+                    interestedFullNames = [];
+                }
+
+                if (cached) {
+                    user = cached.user;
+                    repos = cached.repos;
+                    events = cached.events;
+                } else {
+                    const [userResponse, reposResponse, eventsResponse] = await Promise.all([
+                        fetchWithRetry(`https://api.github.com/users/${username}`, { headers: GH_HEADERS }),
+                        fetchWithRetry(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, { headers: GH_HEADERS }),
+                        fetchWithRetry(`https://api.github.com/users/${username}/events/public?per_page=100`, { headers: GH_HEADERS })
+                    ]);
+
+                    if (!userResponse.ok || !reposResponse.ok || !eventsResponse.ok) {
+                        throw new Error("Failed to fetch GitHub profile data.");
+                    }
+
+                    user = await userResponse.json();
+                    repos = await reposResponse.json();
+                    events = await eventsResponse.json();
+                    writeCache({ user, repos, events });
+                }
+
+                const visibleRepos = Array.isArray(repos) ? repos.filter(isVisibleRepo) : [];
+
+                if (statRepos) {
+                    statRepos.textContent = String(visibleRepos.length);
+                }
+
+                if (statSocial) {
+                    statSocial.textContent = `${user.followers ?? 0} / ${user.following ?? 0}`;
+                }
+
+                if (statContrib) {
+                    statContrib.textContent = String(aggregateThisYearContributions(Array.isArray(events) ? events : []));
+                }
+
+                const activityByRepo = aggregateRecentActivity(Array.isArray(events) ? events : []);
+                const withContributions = visibleRepos.map((repo) => ({
+                    ...repo,
+                    activityCount: activityByRepo[repo.name] || 0
+                }));
+
+                const featured = [...withContributions]
+                    .sort((a, b) => {
+                        if (b.activityCount !== a.activityCount) {
+                            return b.activityCount - a.activityCount;
+                        }
+                        return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
+                    })
+                    .slice(0, 3);
+
+                const resolvedstarredNames = starredNames.length ? starredNames : starred_REPOS;
+                const starred = resolvedstarredNames
+                    .map((name) => withContributions.find((repo) => repo.name === name))
+                    .filter(Boolean)
+                    .slice(0, 3);
+
+                // If none of the configured starred repos are available, fall back to recent activity.
+                const starredToRender = starred.length ? starred : featured;
+
+                starredGrid.innerHTML = "";
+                starredToRender.forEach((repo) => {
+                    starredGrid.appendChild(renderFeaturedCard(repo));
+                });
+
+                featuredGrid.innerHTML = "";
+                featured.slice(0, 3).forEach((repo) => {
+                    featuredGrid.appendChild(renderFeaturedCard(repo));
+                });
+
+                if (!featuredGrid.childElementCount) {
+                    featured.forEach((repo) => {
+                        featuredGrid.appendChild(renderFeaturedCard(repo));
+                    });
+                }
+
+                const interestedTargets = interestedFullNames.length ? interestedFullNames : INTERESTED_REPOS;
+                const ownReposByFullName = new Map(
+                    withContributions.map((repo) => [`${(repo.owner && repo.owner.login) || username}/${repo.name}`.toLowerCase(), repo])
+                );
+
+                const interestedResolved = await Promise.all(interestedTargets.map(async (fullName) => {
+                    const key = String(fullName || "").toLowerCase();
+                    if (ownReposByFullName.has(key)) {
+                        return ownReposByFullName.get(key);
+                    }
+
+                    try {
+                        const repo = await fetchRepoByFullName(fullName);
+                        return {
+                            ...repo,
+                            activityCount: 0
+                        };
+                    } catch {
+                        return null;
+                    }
+                }));
+
+                interestedGrid.innerHTML = "";
+                interestedResolved.filter(Boolean).forEach((repo) => {
+                    interestedGrid.appendChild(renderFeaturedCard(repo, { showOwner: true }));
+                });
+
+                if (!interestedGrid.childElementCount) {
+                    interestedGrid.innerHTML = "<article class=\"project-card\"><h3>Could not load interested repositories</h3><p>Please refresh later or update your interested list link.</p></article>";
+                }
+
+                track.innerHTML = "";
+                withContributions.forEach((repo) => {
+                    track.appendChild(renderRepoCard(repo));
+                });
+
+                const uniqueTopics = Array.from(new Set(
+                    withContributions.flatMap((repo) => Array.isArray(repo.topics) ? repo.topics : [])
+                )).sort((a, b) => a.localeCompare(b));
+
+                topicsContainer.innerHTML = "";
+                if (uniqueTopics.length === 0) {
+                    const empty = document.createElement("span");
+                    empty.className = "topic-chip";
+                    empty.textContent = "No public topics found.";
+                    topicsContainer.appendChild(empty);
+                } else {
+                    uniqueTopics.forEach((topic) => {
+                        const chip = document.createElement("span");
+                        chip.className = "topic-chip";
+                        chip.textContent = topic;
+                        topicsContainer.appendChild(chip);
+                    });
+                }
+            } catch {
+                const cached = readCache();
+                if (cached && Array.isArray(cached.repos) && cached.repos.length) {
+                    if (statContrib) {
+                        statContrib.textContent = String(aggregateThisYearContributions(Array.isArray(cached.events) ? cached.events : []));
+                    }
+
+                    featuredGrid.innerHTML = "";
+                    const backup = cached.repos.filter(isVisibleRepo).slice(0, 3).map((repo) => ({ ...repo, activityCount: 0 }));
+                    backup.forEach((repo) => featuredGrid.appendChild(renderFeaturedCard(repo)));
+
+                    starredGrid.innerHTML = "";
+                    const starredBackup = starred_REPOS
+                        .map((name) => cached.repos.find((repo) => repo.name === name))
+                        .filter((repo) => repo && isVisibleRepo(repo))
+                        .slice(0, 3)
+                        .map((repo) => ({ ...repo, activityCount: 0 }));
+
+                    (starredBackup.length ? starredBackup : backup).forEach((repo) => {
+                        starredGrid.appendChild(renderFeaturedCard(repo));
+                    });
+
+                    interestedGrid.innerHTML = "<article class=\"project-card\"><h3>Interested repositories are unavailable</h3><p>Could not load stars list right now.</p></article>";
+
+                    track.innerHTML = "";
+                    cached.repos.filter(isVisibleRepo).forEach((repo) => track.appendChild(renderRepoCard(repo)));
+
+                    const fallbackTopics = Array.from(new Set(
+                        cached.repos.filter(isVisibleRepo).flatMap((repo) => Array.isArray(repo.topics) ? repo.topics : [])
+                    )).sort((a, b) => a.localeCompare(b));
+
+                    topicsContainer.innerHTML = "";
+                    if (fallbackTopics.length === 0) {
+                        topicsContainer.innerHTML = "<span class=\"topic-chip\">No public topics found.</span>";
+                    } else {
+                        fallbackTopics.forEach((topic) => {
+                            const chip = document.createElement("span");
+                            chip.className = "topic-chip";
+                            chip.textContent = topic;
+                            topicsContainer.appendChild(chip);
+                        });
+                    }
+                } else {
+                    if (statContrib) {
+                        statContrib.textContent = "--";
+                    }
+
+                    starredGrid.innerHTML = "<article class=\"project-card\"><h3>Could not load starred repositories</h3><p>GitHub API limit reached. Please refresh in a little while.</p></article>";
+                    featuredGrid.innerHTML = "<article class=\"project-card\"><h3>Could not load featured repositories</h3><p>GitHub API limit reached. Please refresh in a little while.</p></article>";
+                    interestedGrid.innerHTML = "<article class=\"project-card\"><h3>Could not load interested repositories</h3><p>GitHub API limit reached. Please refresh in a little while.</p></article>";
+                    track.innerHTML = "<article class=\"repo-item\"><h3>Could not load repositories</h3><p class=\"repo-about\">GitHub API limit reached. Please refresh later.</p><p class=\"repo-topics\">Topics: Unavailable</p></article>";
+                    topicsContainer.innerHTML = "<span class=\"topic-chip\">Topics unavailable</span>";
+                }
+            }
+
+            repoNavigation.updateButtons();
+            starredNavigation.updateButtons();
+            featuredNavigation.updateButtons();
+            interestedNavigation.updateButtons();
+        })();
+    </script>
+</body>
+</html>
