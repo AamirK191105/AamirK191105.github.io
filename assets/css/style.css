@@ -715,3 +715,258 @@ main {
         display: none;
     }
 }
+
+/* Developer-console theme */
+:root {
+    --bg: #07111f;
+    --bg-soft: #0c1d2d;
+    --ink: #e6f4f1;
+    --muted: #91a9b5;
+    --accent: #43e6c1;
+    --accent-2: #1d4051;
+    --surface: rgba(13, 30, 45, 0.9);
+    --surface-2: rgba(17, 43, 58, 0.94);
+    --ring: rgba(67, 230, 193, 0.65);
+    --shadow: 0 20px 55px rgba(0, 0, 0, 0.32);
+    --radius: 14px;
+    --container: 1160px;
+}
+
+body {
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    background:
+        linear-gradient(rgba(7, 17, 31, 0.9), rgba(7, 17, 31, 0.96)),
+        url("../img/background.gif") center/260px repeat,
+        radial-gradient(circle at 15% 0%, rgba(67, 230, 193, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(57, 143, 255, 0.13), transparent 26%),
+        var(--bg);
+}
+
+h1,
+h2,
+h3,
+.stat-value {
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    letter-spacing: -0.035em;
+}
+
+h1::before {
+    content: "> ";
+    color: var(--accent);
+}
+
+.ambient-layer {
+    background-image:
+        linear-gradient(90deg, rgba(67, 230, 193, 0.07) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(67, 230, 193, 0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.site-header {
+    top: 0.8rem;
+    margin-top: 0.8rem;
+    border-radius: 12px;
+    background: rgba(8, 24, 37, 0.88);
+    border-color: rgba(67, 230, 193, 0.24);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+}
+
+.brand {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.9rem;
+}
+
+.brand-mark {
+    border-radius: 8px;
+    border-color: rgba(67, 230, 193, 0.4);
+    background: rgba(67, 230, 193, 0.12);
+}
+
+.site-nav {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+}
+
+.site-nav a,
+.button-nav-style {
+    color: #b7cbd0;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    color: var(--accent);
+}
+
+.section {
+    background: rgba(10, 26, 40, 0.86);
+    border-color: rgba(67, 230, 193, 0.18);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.hero {
+    border-top: 2px solid var(--accent);
+    background:
+        linear-gradient(135deg, rgba(13, 38, 53, 0.94), rgba(8, 23, 36, 0.9)),
+        var(--surface);
+}
+
+.hero::after {
+    background: radial-gradient(circle, rgba(67, 230, 193, 0.2), transparent 65%);
+}
+
+.eyebrow,
+.time,
+.repo-owner,
+.project-card a {
+    color: var(--accent);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.76rem;
+}
+
+.hero-copy,
+.project-card p,
+.contact-card p,
+.repo-about,
+.stat-label {
+    color: var(--muted);
+}
+
+.button {
+    border-radius: 8px;
+    color: #06141d;
+    background: var(--accent);
+    box-shadow: 0 0 0 1px rgba(67, 230, 193, 0.2), 0 8px 24px rgba(67, 230, 193, 0.12);
+}
+
+.button:hover,
+.button:focus-visible {
+    box-shadow: 0 0 0 1px var(--accent), 0 10px 28px rgba(67, 230, 193, 0.24);
+}
+
+.button-secondary,
+.button-nav-style,
+.repo-nav {
+    color: var(--ink);
+    border-color: rgba(67, 230, 193, 0.28);
+    background: rgba(17, 43, 58, 0.8);
+}
+
+.button-nav-style:hover,
+.button-nav-style:focus-visible,
+.repo-nav:hover,
+.repo-nav:focus-visible {
+    border-color: var(--accent);
+}
+
+.stats li,
+.project-card,
+.repo-item,
+.skill-column,
+.contact-card {
+    border-color: rgba(67, 230, 193, 0.18);
+    background: linear-gradient(145deg, rgba(17, 43, 58, 0.92), rgba(10, 28, 43, 0.92));
+}
+
+.stat-value {
+    color: var(--accent);
+}
+
+.repo-slider {
+    border-color: rgba(67, 230, 193, 0.18);
+    background: rgba(5, 18, 30, 0.72);
+}
+
+.repo-slider::before {
+    background: linear-gradient(90deg, rgba(5, 18, 30, 1), rgba(5, 18, 30, 0));
+}
+
+.repo-slider::after {
+    background: linear-gradient(270deg, rgba(5, 18, 30, 1), rgba(5, 18, 30, 0));
+}
+
+.repo-item h3 a,
+.project-card h3 a {
+    color: var(--ink);
+}
+
+.repo-item h3 a:hover,
+.repo-item h3 a:focus-visible,
+.project-card h3 a:hover,
+.project-card h3 a:focus-visible {
+    color: var(--accent);
+}
+
+.chip-list li,
+.topic-chip,
+.repo-topic-chips li {
+    border-color: rgba(67, 230, 193, 0.24);
+    color: var(--accent);
+    background: rgba(67, 230, 193, 0.08);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+}
+
+.timeline {
+    border-left-color: rgba(67, 230, 193, 0.35);
+}
+
+.timeline li::before {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(67, 230, 193, 0.12);
+}
+
+.contact-card {
+    background: linear-gradient(125deg, rgba(17, 43, 58, 0.96), rgba(10, 28, 43, 0.96));
+}
+
+.site-footer,
+.site-footer a {
+    color: var(--muted);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--accent);
+}
+
+@media (max-width: 850px) {
+    .site-header {
+        top: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .site-nav {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-header {
+        align-items: stretch;
+    }
+
+    .brand,
+    .button-nav-style {
+        justify-content: center;
+    }
+
+    .site-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.45rem;
+    }
+
+    .site-nav a {
+        justify-content: center;
+        padding: 0.45rem 0.2rem;
+        border: 1px solid rgba(67, 230, 193, 0.12);
+        border-radius: 7px;
+    }
+
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
