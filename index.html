@@ -127,21 +127,7 @@
                 <h2 id="skills-title"><img src="assets/img/icons8-skills-50.png" alt="" class="section-icon">Skills</h2>
             </div>
             <div class="skills-layout topic-layout" id="topicsContainer">
-                <span class="topic-chip">HTML</span>
-                <span class="topic-chip">Python</span>
-                <span class="topic-chip">Advanced Python</span>
-                <span class="topic-chip">C++</span>
-                <span class="topic-chip">C</span>
-                <span class="topic-chip">Bash</span>
-                <span class="topic-chip">Batch</span>
-                <span class="topic-chip">SQL</span>
-                <span class="topic-chip">ScikitLearn</span>
-                <span class="topic-chip">Pandas</span>
-                <span class="topic-chip">Seaborn</span>
-                <span class="topic-chip">RESTApi</span>
-                <span class="topic-chip">Postman</span>
-                <span class="topic-chip">Data Analytics</span>
-                <span class="topic-chip">Machine Learning</span>
+                <span class="topic-chip">Loading skills from repositories...</span>
             </div>
         </section>
 
@@ -212,6 +198,23 @@
             const CACHE_KEY = "sn-portfolio-gh-cache-v1";
             const CACHE_TTL_MS = 30 * 60 * 1000;
             const EXCLUDED_REPOS = new Set(["AamirK191105.github.io", "AamirK191105"]);
+            const LEARNING_JOURNEY_SKILLS = [
+                "HTML",
+                "CSS",
+                "Python",
+                "Advanced Python",
+                "C++",
+                "C",
+                "Bash",
+                "Batch",
+                "SQL",
+                "ScikitLearn",
+                "Pandas",
+                "Seaborn",
+                "RESTApi",
+                "MongoDB",
+                "Postman"
+            ];
 
             const isVisibleRepo = (repo) => repo && repo.name && !EXCLUDED_REPOS.has(repo.name);
 
@@ -319,6 +322,66 @@
                 return article;
             };
 
+            const formatSkillName = (skill) => skill
+                .replace(/[-_]+/g, " ")
+                .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+            const renderSkills = (repositories) => {
+                const skills = new Map();
+
+                const skillsFromRepositories = repositories.flatMap((repo) => [
+                    repo.language,
+                    ...(Array.isArray(repo.languages) ? repo.languages : []),
+                    ...(Array.isArray(repo.topics) ? repo.topics : [])
+                ]);
+
+                [...LEARNING_JOURNEY_SKILLS, ...skillsFromRepositories].forEach((skill) => {
+                    if (typeof skill !== "string" || !skill.trim()) {
+                        return;
+                    }
+
+                    const displayName = formatSkillName(skill.trim());
+                    skills.set(displayName.toLowerCase(), displayName);
+                });
+
+                topicsContainer.innerHTML = "";
+                const skillNames = Array.from(skills.values()).sort((a, b) => a.localeCompare(b));
+
+                if (skillNames.length === 0) {
+                    const empty = document.createElement("span");
+                    empty.className = "topic-chip";
+                    empty.textContent = "No repository skills found.";
+                    topicsContainer.appendChild(empty);
+                    return;
+                }
+
+                skillNames.forEach((skill) => {
+                    const chip = document.createElement("span");
+                    chip.className = "topic-chip";
+                    chip.textContent = skill;
+                    topicsContainer.appendChild(chip);
+                });
+            };
+
+            const addRepositoryLanguages = async (repositories) => Promise.all(
+                repositories.map(async (repo) => {
+                    if (!repo.languages_url) {
+                        return repo;
+                    }
+
+                    try {
+                        const response = await fetchWithRetry(repo.languages_url, { headers: GH_HEADERS }, 2);
+                        const languages = await response.json();
+                        return {
+                            ...repo,
+                            languages: Object.keys(languages)
+                        };
+                    } catch {
+                        return repo;
+                    }
+                })
+            );
+
             const aggregateThisYearContributions = (events) => {
                 const year = new Date().getFullYear();
                 const contributionTypes = new Set([
@@ -404,6 +467,7 @@
                 }
 
                 const visibleRepos = Array.isArray(repos) ? repos.filter(isVisibleRepo) : [];
+                const repositoriesWithLanguages = await addRepositoryLanguages(visibleRepos);
 
                 if (statRepos) {
                     statRepos.textContent = String(visibleRepos.length);
@@ -422,24 +486,7 @@
                     track.appendChild(renderRepoCard(repo));
                 });
 
-                const uniqueTopics = Array.from(new Set(
-                    visibleRepos.flatMap((repo) => Array.isArray(repo.topics) ? repo.topics : [])
-                )).sort((a, b) => a.localeCompare(b));
-
-                topicsContainer.innerHTML = "";
-                if (uniqueTopics.length === 0) {
-                    const empty = document.createElement("span");
-                    empty.className = "topic-chip";
-                    empty.textContent = "No public topics found.";
-                    topicsContainer.appendChild(empty);
-                } else {
-                    uniqueTopics.forEach((topic) => {
-                        const chip = document.createElement("span");
-                        chip.className = "topic-chip";
-                        chip.textContent = topic;
-                        topicsContainer.appendChild(chip);
-                    });
-                }
+                renderSkills(repositoriesWithLanguages);
             } catch {
                 const cached = readCache();
                 if (cached && Array.isArray(cached.repos) && cached.repos.length) {
@@ -450,21 +497,7 @@
                     track.innerHTML = "";
                     cached.repos.filter(isVisibleRepo).forEach((repo) => track.appendChild(renderRepoCard(repo)));
 
-                    const fallbackTopics = Array.from(new Set(
-                        cached.repos.filter(isVisibleRepo).flatMap((repo) => Array.isArray(repo.topics) ? repo.topics : [])
-                    )).sort((a, b) => a.localeCompare(b));
-
-                    topicsContainer.innerHTML = "";
-                    if (fallbackTopics.length === 0) {
-                        topicsContainer.innerHTML = "<span class=\"topic-chip\">No public topics found.</span>";
-                    } else {
-                        fallbackTopics.forEach((topic) => {
-                            const chip = document.createElement("span");
-                            chip.className = "topic-chip";
-                            chip.textContent = topic;
-                            topicsContainer.appendChild(chip);
-                        });
-                    }
+                    renderSkills(await addRepositoryLanguages(cached.repos.filter(isVisibleRepo)));
                 } else {
                     if (statContrib) {
                         statContrib.textContent = "--";
