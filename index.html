@@ -21,7 +21,6 @@
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
             <a href="#starred"><img src="assets/img/icons8-star-50.png" alt="" class="nav-icon">Starred</a>
-            <a href="#projects"><img src="assets/img/icons8-group-of-projects-50.png" alt="" class="nav-icon">Projects</a>
             <a href="#repositories"><img src="assets/img/icons8-repository-50.png" alt="" class="nav-icon">Repos</a>
             <a href="#interested"><img src="assets/img/icons8-star-50.png" alt="" class="nav-icon">Interested</a>
 
@@ -37,9 +36,9 @@
             <p class="eyebrow">IT STUDENT // BUILDER</p>
             <h1 id="hero-title">Exploring the intersection of security, data, and technology to solve complex technical challenges.</h1>
             <p class="hero-copy">
-                Hi, I am Aamir, an Information Technology student at Middlesex University Dubai. I am passionate about Data Analytics, Cybersecurity, and technical problem-solving. I'm building expertise in Python, machine learning, database management, and cybersecurity concepts to create secure, scalable, and data-driven solutions.</p>
+                Hi, I am Aamir, an Information Technology student at Middlesex University Dubai. I am passionate about Data Analytics, Cybersecurity, and technical problem-solving. I use a wide range of AI tools to research, prototype, debug, and turn complex work into repeatable task pipelines alongside Python, machine learning, database management, and cybersecurity concepts.</p>
             <div class="hero-actions">
-                <a class="button" href="#projects">View Projects</a>
+                <a class="button" href="https://github.com/AamirK191105?tab=repositories" target="_blank" rel="noopener noreferrer">View Projects</a>
                 <a class="button button-secondary" href="#contact">Get In Touch</a>
             </div>
             <ul class="stats" aria-label="Highlights">
@@ -49,34 +48,13 @@
                 </li>
                 <li>
                     <span class="stat-value" id="statContrib">--</span>
-                    <span class="stat-label">Contributions (This Year)</span>
+                    <span class="stat-label">Contributions (Last Year)</span>
                 </li>
                 <li>
                     <span class="stat-value" id="statSocial">--</span>
                     <span class="stat-label">Followers / Following</span>
                 </li>
             </ul>
-        </section>
-
-        <section class="section reveal" id="projects" aria-labelledby="projects-title">
-            <div class="section-head repo-head">
-                <div>
-                    <p class="eyebrow">Most Contributed Repos</p>
-                    <h2 id="projects-title"><img src="assets/img/icons8-group-of-projects-50.png" alt="" class="section-icon">Where I have contributed the most</h2>
-                </div>
-                <div class="repo-controls" aria-label="Most contributed repositories carousel controls">
-                    <button class="repo-nav" id="featuredBack" type="button" aria-controls="featuredGrid">Back</button>
-                    <button class="repo-nav" id="featuredNext" type="button" aria-controls="featuredGrid">Next</button>
-                </div>
-            </div>
-            <div class="repo-slider" aria-label="Most contributed repositories slider">
-                <div class="repo-track" id="featuredGrid" tabindex="0">
-                    <article class="project-card">
-                        <h3>Loading repositories...</h3>
-                        <p>Fetching contribution data from GitHub API.</p>
-                    </article>
-                </div>
-            </div>
         </section>
 
         <section class="section reveal" id="repositories" aria-labelledby="repositories-title">
@@ -102,20 +80,21 @@
         </section>
 
         <section class="section reveal" id="interested" aria-labelledby="interested-title">
-            <div class="section-head">
-                <p class="eyebrow">Exploring</p>
-                <h2 id="interested-title"><img src="assets/img/icons8-idea-50.png" alt="" class="section-icon">Resources I'm exploring</h2>
+            <div class="section-head repo-head">
+                <div>
+                    <p class="eyebrow">Exploring</p>
+                    <h2 id="interested-title"><img src="assets/img/icons8-idea-50.png" alt="" class="section-icon">Resources I'm exploring</h2>
+                </div>
+                <div class="repo-controls" aria-label="Starred repository carousel controls">
+                    <button class="repo-nav" id="starredBack" type="button" aria-controls="starredTrack">Back</button>
+                    <button class="repo-nav" id="starredNext" type="button" aria-controls="starredTrack">Next</button>
+                </div>
             </div>
             <div class="repo-slider">
-                <div class="repo-track">
+                <div class="repo-track" id="starredTrack" tabindex="0" aria-label="GitHub repositories starred by Aamir">
                     <article class="repo-item">
-                        <h3><a href="https://github.com/practical-tutorials/project-based-learning" target="_blank" rel="noopener noreferrer">Project Based Learning</a></h3>
-                        <p class="repo-about">A comprehensive list of project-based tutorials across different programming languages and domains.</p>
-                        <ul class="chip-list repo-topic-chips">
-                            <li>Learning</li>
-                            <li>Projects</li>
-                            <li>Tutorials</li>
-                        </ul>
+                        <h3>Loading starred repositories...</h3>
+                        <p class="repo-about">Fetching the projects and tools Aamir is exploring on GitHub.</p>
                     </article>
                 </div>
             </div>
@@ -149,6 +128,10 @@
                     <span class="time">2025</span>
                     <p>ML Models with ScikitLearn, Pandas, Seaborn, RESTApi, MongoDB, Postman</p>
                 </li>
+                <li>
+                    <span class="time">2026</span>
+                    <p>Tableau, Business Intelligence, AI task pipelines, and Azure AZ-900 certification in progress</p>
+                </li>
             </ol>
         </section>
 
@@ -159,7 +142,7 @@
             </div>
             <div class="contact-card">
                 <p>
-                    Open to collaboration, internships, and project discussions in Data Analytics, Cybersecurity, IT solutions, and machine learning. 
+                    Open to any IT roles, internships, collaboration, and project discussions in Data Analytics, Cybersecurity, IT solutions, machine learning, and AI-assisted workflows. I enjoy breaking work into clear pipelines where AI tools support research, implementation, testing, and documentation.
                     Based in United Arab Emirates.
                 </p>
                 <div class="contact-actions">
@@ -180,14 +163,17 @@
         (async function () {
             const username = "AamirK191105";
             const track = document.getElementById("repoTrack");
+            const starredTrack = document.getElementById("starredTrack");
             const backButton = document.getElementById("repoBack");
             const nextButton = document.getElementById("repoNext");
+            const starredBackButton = document.getElementById("starredBack");
+            const starredNextButton = document.getElementById("starredNext");
             const topicsContainer = document.getElementById("topicsContainer");
             const statRepos = document.getElementById("statRepos");
             const statContrib = document.getElementById("statContrib");
             const statSocial = document.getElementById("statSocial");
 
-            if (!track || !backButton || !nextButton || !topicsContainer) {
+            if (!track || !starredTrack || !backButton || !nextButton || !starredBackButton || !starredNextButton || !topicsContainer) {
                 return;
             }
 
@@ -195,7 +181,8 @@
                 "Accept": "application/vnd.github+json"
             };
 
-            const CACHE_KEY = "sn-portfolio-gh-cache-v1";
+            const CACHE_KEY = "sn-portfolio-gh-cache-v3";
+            const CONTRIBUTIONS_URL = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
             const CACHE_TTL_MS = 30 * 60 * 1000;
             const EXCLUDED_REPOS = new Set(["AamirK191105.github.io", "AamirK191105"]);
             const LEARNING_JOURNEY_SKILLS = [
@@ -213,7 +200,14 @@
                 "Seaborn",
                 "RESTApi",
                 "MongoDB",
-                "Postman"
+                "Postman",
+                "Tableau",
+                "Business Intelligence Reporting",
+                "Azure AZ-900 Certification (In Progress)",
+                "AI-Assisted Development",
+                "Prompt Engineering",
+                "AI Task Pipelines",
+                "Workflow Automation"
             ];
 
             const isVisibleRepo = (repo) => repo && repo.name && !EXCLUDED_REPOS.has(repo.name);
@@ -308,18 +302,22 @@
                 about.className = "repo-about";
                 about.textContent = repo.description || "No public description added yet.";
 
-                const topics = document.createElement("ul");
-                topics.className = "chip-list repo-topic-chips";
-                (repo.topics && repo.topics.length ? repo.topics : ["No Topics"]).forEach((topic) => {
-                    const chip = document.createElement("li");
-                    chip.textContent = topic;
-                    topics.appendChild(chip);
-                });
-
                 article.appendChild(h3);
                 article.appendChild(about);
-                article.appendChild(topics);
                 return article;
+            };
+
+            const renderStarredRepositories = (repositories) => {
+                starredTrack.innerHTML = "";
+
+                if (!repositories.length) {
+                    starredTrack.innerHTML = "<article class=\"repo-item\"><h3>No starred repositories yet</h3><p class=\"repo-about\">Aamir's public GitHub stars will appear here as he explores new tools and projects.</p></article>";
+                    return;
+                }
+
+                repositories.forEach((repo) => {
+                    starredTrack.appendChild(renderRepoCard(repo));
+                });
             };
 
             const formatSkillName = (skill) => skill
@@ -438,35 +436,45 @@
             };
 
             const repoNavigation = setupTrackNavigation(track, backButton, nextButton, ".repo-item");
+            const starredNavigation = setupTrackNavigation(starredTrack, starredBackButton, starredNextButton, ".repo-item");
 
             try {
                 const cached = readCache();
                 let user;
                 let repos;
                 let events;
+                let starred;
+                let contributions;
 
                 if (cached) {
                     user = cached.user;
                     repos = cached.repos;
                     events = cached.events;
+                    starred = cached.starred;
+                    contributions = cached.contributions;
                 } else {
-                    const [userResponse, reposResponse, eventsResponse] = await Promise.all([
+                    const [userResponse, reposResponse, eventsResponse, starredResponse, contributionsResponse] = await Promise.all([
                         fetchWithRetry(`https://api.github.com/users/${username}`, { headers: GH_HEADERS }),
                         fetchWithRetry(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, { headers: GH_HEADERS }),
-                        fetchWithRetry(`https://api.github.com/users/${username}/events/public?per_page=100`, { headers: GH_HEADERS })
+                        fetchWithRetry(`https://api.github.com/users/${username}/events/public?per_page=100`, { headers: GH_HEADERS }),
+                        fetchWithRetry(`https://api.github.com/users/${username}/starred?per_page=100`, { headers: GH_HEADERS }),
+                        fetchWithRetry(CONTRIBUTIONS_URL, { headers: GH_HEADERS })
                     ]);
 
-                    if (!userResponse.ok || !reposResponse.ok || !eventsResponse.ok) {
+                    if (!userResponse.ok || !reposResponse.ok || !eventsResponse.ok || !starredResponse.ok || !contributionsResponse.ok) {
                         throw new Error("Failed to fetch GitHub profile data.");
                     }
 
                     user = await userResponse.json();
                     repos = await reposResponse.json();
                     events = await eventsResponse.json();
-                    writeCache({ user, repos, events });
+                    starred = await starredResponse.json();
+                    contributions = await contributionsResponse.json();
+                    writeCache({ user, repos, events, starred, contributions });
                 }
 
                 const visibleRepos = Array.isArray(repos) ? repos.filter(isVisibleRepo) : [];
+                const visibleStarred = Array.isArray(starred) ? starred.filter((repo) => repo && repo.name) : [];
                 const repositoriesWithLanguages = await addRepositoryLanguages(visibleRepos);
 
                 if (statRepos) {
@@ -478,7 +486,10 @@
                 }
 
                 if (statContrib) {
-                    statContrib.textContent = String(aggregateThisYearContributions(Array.isArray(events) ? events : []));
+                    const lastYearTotal = contributions && contributions.total && contributions.total.lastYear;
+                    statContrib.textContent = typeof lastYearTotal === "number"
+                        ? String(lastYearTotal)
+                        : String(aggregateThisYearContributions(Array.isArray(events) ? events : []));
                 }
 
                 track.innerHTML = "";
@@ -486,17 +497,22 @@
                     track.appendChild(renderRepoCard(repo));
                 });
 
+                renderStarredRepositories(visibleStarred);
                 renderSkills(repositoriesWithLanguages);
             } catch {
                 const cached = readCache();
                 if (cached && Array.isArray(cached.repos) && cached.repos.length) {
                     if (statContrib) {
-                        statContrib.textContent = String(aggregateThisYearContributions(Array.isArray(cached.events) ? cached.events : []));
+                        const lastYearTotal = cached.contributions && cached.contributions.total && cached.contributions.total.lastYear;
+                        statContrib.textContent = typeof lastYearTotal === "number"
+                            ? String(lastYearTotal)
+                            : String(aggregateThisYearContributions(Array.isArray(cached.events) ? cached.events : []));
                     }
 
                     track.innerHTML = "";
                     cached.repos.filter(isVisibleRepo).forEach((repo) => track.appendChild(renderRepoCard(repo)));
 
+                    renderStarredRepositories(Array.isArray(cached.starred) ? cached.starred.filter((repo) => repo && repo.name) : []);
                     renderSkills(await addRepositoryLanguages(cached.repos.filter(isVisibleRepo)));
                 } else {
                     if (statContrib) {
@@ -504,11 +520,13 @@
                     }
 
                     track.innerHTML = "<article class=\"repo-item\"><h3>Could not load repositories</h3><p class=\"repo-about\">GitHub API limit reached. Please refresh later.</p><p class=\"repo-topics\">Topics: Unavailable</p></article>";
+                    starredTrack.innerHTML = "<article class=\"repo-item\"><h3>Could not load starred repositories</h3><p class=\"repo-about\">GitHub API limit reached. Please refresh later.</p></article>";
                     topicsContainer.innerHTML = "<span class=\"topic-chip\">Topics unavailable</span>";
                 }
             }
 
             repoNavigation.updateButtons();
+            starredNavigation.updateButtons();
         })();
     </script>
 </body>
