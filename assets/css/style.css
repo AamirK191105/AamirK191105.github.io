@@ -1,13 +1,13 @@
 :root {
-    --bg: #e8f5bd;
-    --bg-soft: #a2cb8b;
-    --ink: #24311c;
-    --muted: rgba(36, 49, 28, 0.74);
-    --accent: #5b7e3c;
-    --accent-2: #a2cb8b;
-    --surface: rgba(248, 252, 232, 0.88);
-    --surface-2: rgba(232, 245, 189, 0.94);
-    --ring: rgba(196, 69, 69, 0.42);
+    --bg: #070b14;
+    --bg-soft: #111b33;
+    --ink: #dbe7ff;
+    --muted: rgba(159, 179, 217, 0.86);
+    --accent: #22e5ff;
+    --accent-2: #8b5cf6;
+    --surface: rgba(15, 23, 43, 0.9);
+    --surface-2: rgba(17, 27, 51, 0.94);
+    --ring: rgba(34, 229, 255, 0.65);
     --shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
     --radius: 18px;
     --container: 1100px;
@@ -32,10 +32,10 @@ body {
     font-family: "Outfit", "Segoe UI", sans-serif;
     color: var(--ink);
     background:
-        linear-gradient(rgba(232, 245, 189, 0.82), rgba(162, 203, 139, 0.86)),
+        linear-gradient(rgba(7, 11, 20, 0.82), rgba(17, 27, 51, 0.86)),
         url("../img/background.gif") center/260px repeat,
-        radial-gradient(circle at 12% 8%, rgba(91, 126, 60, 0.2), transparent 28%),
-        radial-gradient(circle at 90% 3%, rgba(196, 69, 69, 0.14), transparent 22%),
+        radial-gradient(circle at 12% 8%, rgba(34, 229, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 90% 3%, rgba(139, 92, 246, 0.1), transparent 22%),
         linear-gradient(155deg, var(--bg), var(--bg-soft));
     line-height: 1.6;
 }
@@ -63,8 +63,8 @@ a {
     pointer-events: none;
     z-index: -1;
     background-image:
-        linear-gradient(90deg, rgba(91, 126, 60, 0.08) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(91, 126, 60, 0.06) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(17, 27, 51, 0.72) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 27, 51, 0.72) 1px, transparent 1px);
     background-size: 52px 52px;
     mask-image: radial-gradient(circle at 50% 20%, black 40%, transparent 90%);
 }
@@ -292,6 +292,18 @@ main {
     align-items: center;
     gap: 0.6rem;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.section-icon {
+    filter: hue-rotate(85deg) saturate(1.5);
+}
+
+.nav-icon {
+    filter: hue-rotate(85deg) saturate(1.5);
+}
+
+.brand-icon {
+    filter: hue-rotate(85deg) saturate(1.5);
 }
 
 .section-icon {
@@ -718,15 +730,15 @@ main {
 
 /* Developer-console theme */
 :root {
-    --bg: #07111f;
-    --bg-soft: #0c1d2d;
-    --ink: #e6f4f1;
-    --muted: #91a9b5;
-    --accent: #43e6c1;
-    --accent-2: #1d4051;
-    --surface: rgba(13, 30, 45, 0.9);
-    --surface-2: rgba(17, 43, 58, 0.94);
-    --ring: rgba(67, 230, 193, 0.65);
+    --bg: #070b14;
+    --bg-soft: #111b33;
+    --ink: #dbe7ff;
+    --muted: #9fb3d9;
+    --accent: #22e5ff;
+    --accent-2: #8b5cf6;
+    --surface: rgba(15, 23, 43, 0.9);
+    --surface-2: rgba(17, 27, 51, 0.94);
+    --ring: rgba(34, 229, 255, 0.65);
     --shadow: 0 20px 55px rgba(0, 0, 0, 0.32);
     --radius: 14px;
     --container: 1160px;
@@ -735,10 +747,10 @@ main {
 body {
     font-family: "Space Grotesk", "Segoe UI", sans-serif;
     background:
-        linear-gradient(rgba(7, 17, 31, 0.9), rgba(7, 17, 31, 0.96)),
+        linear-gradient(rgba(7, 11, 20, 0.9), rgba(7, 11, 20, 0.96)),
         url("../img/background.gif") center/260px repeat,
-        radial-gradient(circle at 15% 0%, rgba(67, 230, 193, 0.14), transparent 30%),
-        radial-gradient(circle at 90% 15%, rgba(57, 143, 255, 0.13), transparent 26%),
+        radial-gradient(circle at 15% 0%, rgba(34, 229, 255, 0.1), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.1), transparent 26%),
         var(--bg);
 }
 
@@ -757,8 +769,8 @@ h1::before {
 
 .ambient-layer {
     background-image:
-        linear-gradient(90deg, rgba(67, 230, 193, 0.07) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(67, 230, 193, 0.07) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(17, 27, 51, 0.72) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 27, 51, 0.72) 1px, transparent 1px);
     background-size: 40px 40px;
     mask-image: linear-gradient(to bottom, black, transparent 82%);
 }
@@ -767,8 +779,8 @@ h1::before {
     top: 0.8rem;
     margin-top: 0.8rem;
     border-radius: 12px;
-    background: rgba(8, 24, 37, 0.88);
-    border-color: rgba(67, 230, 193, 0.24);
+    background: rgba(7, 11, 20, 0.88);
+    border-color: rgba(28, 42, 74, 0.9);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
 }
 
@@ -779,8 +791,8 @@ h1::before {
 
 .brand-mark {
     border-radius: 8px;
-    border-color: rgba(67, 230, 193, 0.4);
-    background: rgba(67, 230, 193, 0.12);
+    border-color: rgba(34, 229, 255, 0.4);
+    background: rgba(34, 229, 255, 0.1);
 }
 
 .site-nav {
@@ -790,7 +802,7 @@ h1::before {
 
 .site-nav a,
 .button-nav-style {
-    color: #b7cbd0;
+    color: var(--accent-2);
 }
 
 .site-nav a:hover,
@@ -799,8 +811,8 @@ h1::before {
 }
 
 .section {
-    background: rgba(10, 26, 40, 0.86);
-    border-color: rgba(67, 230, 193, 0.18);
+    background: rgba(10, 16, 30, 0.9);
+    border-color: rgba(28, 42, 74, 0.9);
     border-radius: 16px;
     box-shadow: var(--shadow);
 }
@@ -808,12 +820,12 @@ h1::before {
 .hero {
     border-top: 2px solid var(--accent);
     background:
-        linear-gradient(135deg, rgba(13, 38, 53, 0.94), rgba(8, 23, 36, 0.9)),
+        linear-gradient(135deg, rgba(17, 27, 51, 0.96), rgba(10, 16, 30, 0.94)),
         var(--surface);
 }
 
 .hero::after {
-    background: radial-gradient(circle, rgba(67, 230, 193, 0.2), transparent 65%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.16), transparent 65%);
 }
 
 .eyebrow,
@@ -835,22 +847,23 @@ h1::before {
 
 .button {
     border-radius: 8px;
-    color: #06141d;
+    color: #f5f8ff;
     background: var(--accent);
-    box-shadow: 0 0 0 1px rgba(67, 230, 193, 0.2), 0 8px 24px rgba(67, 230, 193, 0.12);
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 0 1px rgba(34, 229, 255, 0.2), 0 8px 24px rgba(34, 229, 255, 0.12);
 }
 
 .button:hover,
 .button:focus-visible {
-    box-shadow: 0 0 0 1px var(--accent), 0 10px 28px rgba(67, 230, 193, 0.24);
+    box-shadow: 0 0 0 1px var(--accent), 0 10px 28px rgba(139, 92, 246, 0.24);
 }
 
 .button-secondary,
 .button-nav-style,
 .repo-nav {
     color: var(--ink);
-    border-color: rgba(67, 230, 193, 0.28);
-    background: rgba(17, 43, 58, 0.8);
+    border-color: rgba(28, 42, 74, 0.9);
+    background: rgba(17, 27, 51, 0.8);
 }
 
 .button-nav-style:hover,
@@ -865,8 +878,8 @@ h1::before {
 .repo-item,
 .skill-column,
 .contact-card {
-    border-color: rgba(67, 230, 193, 0.18);
-    background: linear-gradient(145deg, rgba(17, 43, 58, 0.92), rgba(10, 28, 43, 0.92));
+    border-color: rgba(28, 42, 74, 0.9);
+    background: linear-gradient(145deg, rgba(17, 27, 51, 0.94), rgba(10, 16, 30, 0.94));
 }
 
 .stat-value {
@@ -874,16 +887,16 @@ h1::before {
 }
 
 .repo-slider {
-    border-color: rgba(67, 230, 193, 0.18);
-    background: rgba(5, 18, 30, 0.72);
+    border-color: rgba(28, 42, 74, 0.9);
+    background: rgba(7, 11, 20, 0.72);
 }
 
 .repo-slider::before {
-    background: linear-gradient(90deg, rgba(5, 18, 30, 1), rgba(5, 18, 30, 0));
+    background: linear-gradient(90deg, rgba(7, 11, 20, 1), rgba(7, 11, 20, 0));
 }
 
 .repo-slider::after {
-    background: linear-gradient(270deg, rgba(5, 18, 30, 1), rgba(5, 18, 30, 0));
+    background: linear-gradient(270deg, rgba(7, 11, 20, 1), rgba(7, 11, 20, 0));
 }
 
 .repo-item h3 a,
@@ -901,24 +914,24 @@ h1::before {
 .chip-list li,
 .topic-chip,
 .repo-topic-chips li {
-    border-color: rgba(67, 230, 193, 0.24);
+    border-color: rgba(28, 42, 74, 0.9);
     color: var(--accent);
-    background: rgba(67, 230, 193, 0.08);
+    background: rgba(34, 229, 255, 0.08);
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.72rem;
 }
 
 .timeline {
-    border-left-color: rgba(67, 230, 193, 0.35);
+    border-left-color: rgba(34, 229, 255, 0.35);
 }
 
 .timeline li::before {
     background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(67, 230, 193, 0.12);
+    box-shadow: 0 0 0 4px rgba(34, 229, 255, 0.12);
 }
 
 .contact-card {
-    background: linear-gradient(125deg, rgba(17, 43, 58, 0.96), rgba(10, 28, 43, 0.96));
+    background: linear-gradient(125deg, rgba(17, 27, 51, 0.96), rgba(10, 16, 30, 0.96));
 }
 
 .site-footer,
@@ -961,7 +974,7 @@ h1::before {
     .site-nav a {
         justify-content: center;
         padding: 0.45rem 0.2rem;
-        border: 1px solid rgba(67, 230, 193, 0.12);
+        border: 1px solid rgba(28, 42, 74, 0.9);
         border-radius: 7px;
     }
 
